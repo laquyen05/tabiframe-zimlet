@@ -37,7 +37,7 @@ com_zimbra_tabiframe_HandlerObject.prototype.constructor = com_zimbra_tabiframe_
 com_zimbra_tabiframe_HandlerObject.prototype.init =
 function() {
 
-	this._simpleAppName = this.createApp("Tab iFrame App", "zimbraIcon", "An app in a new tab");
+	this._simpleAppName = this.createApp("SecureMail.vn", "zimbraIcon", "An app in a new tab");
 
 };
 
