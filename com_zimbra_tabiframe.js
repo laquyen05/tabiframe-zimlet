@@ -75,7 +75,7 @@ function(appName) {
 		
 			var app = appCtxt.getApp(appName); // get access to ZmZimletApp
 
-			app.setContent("<iframe id=\"tabiframe-app\" name=\"tabiframe-app\" src=\"http://www.securemail.vn\" width=\"100%\" height=\"100%\" /></iframe>"); // write HTML to app
+			app.setContent("<iframe id=\"tabiframe-app\" name=\"tabiframe-app\" src=\"https://www.securemail.vn\" width=\"100%\" height=\"100%\" /></iframe>"); // write HTML to app
 
 			break;
 		}
