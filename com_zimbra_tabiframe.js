@@ -30,6 +30,10 @@ function com_zimbra_tabiframe_HandlerObject() {
 com_zimbra_tabiframe_HandlerObject.prototype = new ZmZimletBase();
 com_zimbra_tabiframe_HandlerObject.prototype.constructor = com_zimbra_tabiframe_HandlerObject;
 
+var tabLabel = "SecureMail.vn";
+var url = "https://www.securemail.vn"; //Should be HTTPS to avoid mixed content issue.
+var tabDesc = "Open tab to view page: " + url;
+
 /**
  * This method gets called by the Zimlet framework when the zimlet loads.
  *  
@@ -37,7 +41,7 @@ com_zimbra_tabiframe_HandlerObject.prototype.constructor = com_zimbra_tabiframe_
 com_zimbra_tabiframe_HandlerObject.prototype.init =
 function() {
 
-	this._simpleAppName = this.createApp("SecureMail.vn", "zimbraIcon", "An app in a new tab");
+	this._simpleAppName = this.createApp(tabLabel, "zimbraIcon", tabDesc);
 
 };
 
@@ -75,7 +79,7 @@ function(appName) {
 		
 			var app = appCtxt.getApp(appName); // get access to ZmZimletApp
 
-			app.setContent("<iframe id=\"tabiframe-app\" name=\"tabiframe-app\" src=\"https://www.securemail.vn\" width=\"100%\" height=\"100%\" /></iframe>"); // write HTML to app
+			app.setContent("<iframe id=\"tabiframe-app\" name=\"tabiframe-app\" src=" + url + " width=\"100%\" height=\"100%\" /></iframe>"); // write HTML to app
 
 			break;
 		}
