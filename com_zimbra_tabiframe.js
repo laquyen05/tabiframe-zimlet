@@ -30,8 +30,8 @@ function com_zimbra_tabiframe_HandlerObject() {
 com_zimbra_tabiframe_HandlerObject.prototype = new ZmZimletBase();
 com_zimbra_tabiframe_HandlerObject.prototype.constructor = com_zimbra_tabiframe_HandlerObject;
 
-var tabLabel = "SecureMail.vn";
-var url = "https://www.securemail.vn"; //Should be HTTPS to avoid mixed content issue.
+var tabLabel = "Lịch Lãnh đạo Bộ";
+var url = "http://congvan.mt.gov.vn/lichlamviec.nsf/lichlamviec.html"; //Should be HTTPS to avoid mixed content issue.
 var tabDesc = "Open tab to view page: " + url;
 
 /**
@@ -59,6 +59,12 @@ function(appName, active) {
 		
 			var app = appCtxt.getApp(appName); // get access to ZmZimletApp
 
+			//Hide left object
+			skin._showEl("skin_tr_search", false);
+			skin._showEl("skin_td_tree", false);
+			skin._showEl("ztb__NEW_MENU", false);
+			skin._reflowApp();
+			
 			break;
 		}
 	}
@@ -79,7 +85,7 @@ function(appName) {
 		
 			var app = appCtxt.getApp(appName); // get access to ZmZimletApp
 
-			app.setContent("<iframe id=\"tabiframe-app\" name=\"tabiframe-app\" src=" + url + " width=\"100%\" height=\"100%\" /></iframe>"); // write HTML to app
+			app.setContent("<iframe id=\"tabiframe-app\" name=\"tabiframe-app\" src=" + url + " width=\"100%\" height=\"100%\" style=\"border: 1px solid #ccc;\" /></iframe>"); // write HTML to app
 
 			break;
 		}
